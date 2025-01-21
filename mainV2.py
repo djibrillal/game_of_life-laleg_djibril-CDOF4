@@ -75,17 +75,19 @@ def prochaine_generation(grille):
     
     return nouvelle_grille
 
+def est_stable(grille, nouvelle_grille):
+    return grille == nouvelle_grille
+
 def main():
-    # Initialisation de la grille (ici, aléatoire)
     grille = generer_grille_aleatoire(HAUTEUR, LARGEUR)
-    
-    try:
-        while True:
-            afficher_grille(grille)
-            grille = prochaine_generation(grille)
-            time.sleep(0.2)  # Ajustez la vitesse de rafraîchissement
-    except KeyboardInterrupt:
-        print("Fin du jeu.")
+    while True:
+        afficher_grille(grille)
+        nouvelle_grille = prochaine_generation(grille)
+        if est_stable(grille, nouvelle_grille):
+            print("La grille est stable. Fin de la simulation.")
+            break
+        grille = nouvelle_grille
+        time.sleep(0.2)
 
 if __name__ == "__main__":
     main()
