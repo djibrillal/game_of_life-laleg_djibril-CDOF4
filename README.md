@@ -8,3 +8,14 @@ Le Game of Life est une simulation d'automate cellulaire sur une grille. Chaque 
 - Initialisation de la grille avec un état aléatoire.
 - Affichage de la grille dans le terminal.
 - Évolution de la grille au fil des itérations selon les règles du jeu.
+
+## Installation et Exécution
+
+### Prérequis
+- Python 3.x doit être installé sur votre machine.
+
+### Étapes
+1. Clonez ce dépôt sur votre machine locale :
+   ```bash
+   git clone https://github.com/laleg_djibril/game_of_life-laleg_djibril-CDOF4.git
+   cd game_of_life-laleg_djibril-CDOF4
