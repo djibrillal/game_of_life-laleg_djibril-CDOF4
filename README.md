@@ -6,8 +6,10 @@ Le Game of Life est une simulation d'automate cellulaire sur une grille. Chaque 
 
 ## Fonctionnalités
 - Initialisation de la grille avec un état aléatoire.
+- Possibilité de définir la taille de la grille au démarrage.
 - Affichage de la grille dans le terminal.
 - Évolution de la grille au fil des itérations selon les règles du jeu.
+- Détection de la stabilité de la grille pour arrêter automatiquement la simulation.
 
 ## Installation et Exécution
 
