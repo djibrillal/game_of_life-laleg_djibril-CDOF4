@@ -1,10 +1,6 @@
 import time
 import random
 
-# Paramètres de la grille
-LARGEUR = 20
-HAUTEUR = 20
-
 def generer_grille_aleatoire(hauteur, largeur):
     """
     Génère une grille de taille (hauteur x largeur)
@@ -79,7 +75,18 @@ def est_stable(grille, nouvelle_grille):
     return grille == nouvelle_grille
 
 def main():
-    grille = generer_grille_aleatoire(HAUTEUR, LARGEUR)
+    # Demander la taille de la grille à l'utilisateur
+    try:
+        hauteur = int(input("Entrez la hauteur de la grille (par défaut 20) : ") or 20)
+        largeur = int(input("Entrez la largeur de la grille (par défaut 20) : ") or 20)
+        if hauteur <= 0 or largeur <= 0:
+            raise ValueError("Les dimensions doivent être des nombres positifs.")
+    except ValueError as e:
+        print(f"Entrée invalide : {e}. Utilisation des dimensions par défaut (20x20).")
+        hauteur, largeur = 20, 20
+
+    grille = generer_grille_aleatoire(hauteur, largeur)
+    
     while True:
         afficher_grille(grille)
         nouvelle_grille = prochaine_generation(grille)
